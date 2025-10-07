@@ -1,0 +1,23 @@
+.productDesContent{
+    width: 100%;
+}
+
+.productDesContent>h3{
+    text-align: left;
+}
+.productDesContent>ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-left:0px;
+    padding-left: 0px;
+    gap: 10px;
+}
+.productDesContent>h2{
+    color: #0066ff;
+}
+.contentButonAction{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}

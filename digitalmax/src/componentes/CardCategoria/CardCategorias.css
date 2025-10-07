@@ -1,0 +1,45 @@
+
+
+.CardCatConteiner{
+    min-width : 200px;
+    min-height: 200px;
+    position: relative;
+    color: #fffff0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.CardCatConteiner::after{
+    background-color: #0066ff;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    opacity: 0.6;
+    transition: all 0.5s ease;
+}
+.CardCatConteiner:hover::after{
+    opacity: 0.3;
+}
+.CardCatConteiner>img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -10;
+}
+.CardCatConteiner>h3{
+    position: absolute;
+    text-align: center;
+    font-size: 1.9em;
+}
+@media (width > 700) {
+   .CardCatConteiner{
+    width: 100px;
+    height: 100px;
+}
+}
+
