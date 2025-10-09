@@ -1,0 +1,17 @@
+.ButtonContUser{
+    background-color: #0066ff;
+    width: 60px;
+    height:60px;
+    border-radius:100% ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ButtonContUser>img{
+    width: 70%;
+    height: 70%;
+}
+.ButtonContUser:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,28 @@
+.cardProduct{
+    width: 150px;
+    height: 300px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #1d1d1d;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.cardProduct:hover{
+    scale: 1.1;
+}
+
+.cardProduct>img{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    height: 50%;   
+}
+.cardProduct>span{
+    color: #0066ff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
