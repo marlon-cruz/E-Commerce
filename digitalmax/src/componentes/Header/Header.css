@@ -1,0 +1,103 @@
+.headerComponent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0066ff;
+    width: 100vw;
+    max-width: 1800px;
+    top: 0px;
+    left: 0px;
+    color: #fffff0;
+    text-align: center;
+    height: 10%;
+}
+.headerComponent>div:first-child{
+    display: flex;
+    flex-direction: row;
+   
+}
+.headerComponent>div:first-child h2{
+    margin: 5px;
+    font-size: 0.8rem;
+}
+.headerComponent>div:first-child img{
+    width: 30px;
+    height: 30px;
+}
+.headerComponent>div:nth-child(2){
+    display: flex;
+    flex-direction: row;
+    
+}
+.headerComponent>div:nth-child(2) img{
+    width: 20px;
+    height: 20px;
+    margin-left: -30px;
+    margin-top: 10px;
+}
+.headerComponent>div:nth-child(2) input{
+    width: 100%;
+    height: 40px;
+    background: #fffff0;
+    border-radius: 16px;
+    outline: none;
+}
+.headerComponent>div:last-child{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+     
+}
+.headerComponent>div:last-child img{
+    width: 30px;
+    height: 30px;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+}
+.headerComponent>div:last-child p{
+    margin: 0px;
+    padding: 0px;
+    font-size: 0.6rem;
+}
+.headerComponent>div:last-child>img:last-child{
+    margin-top: -20px;
+}
+img{
+    width: 50px;
+    height: 50px;
+}
+
+@media (width > 600px) {
+    .headerComponent>div:nth-child(2) input{
+        width: 300px;
+    }
+    .headerComponent>div:first-child h2{
+        font-size:2rem;
+        margin-top: 15px;
+    }
+    
+    .headerComponent>div:first-child img{
+        margin-top: 10px;
+        margin-left: 10px;
+         width: 50px;
+        height: 50px;
+    }
+    .headerComponent>div:last-child img{
+        margin-top: 10px;
+        margin-right: 10px;
+        width: 40px;
+        height:40px;
+    }
+    .headerComponent>div:last-child img:last-child{
+        margin-top: -10px;
+    }
+}
+@media (width>1150px) {
+    .headerComponent>div:nth-child(2) input{
+        width: 700px;
+        margin-left: -100px;
+    }
+}

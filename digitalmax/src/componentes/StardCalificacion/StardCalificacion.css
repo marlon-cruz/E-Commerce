@@ -1,0 +1,8 @@
+
+.StardContentView>ul{
+    display: flex;
+    flex-direction: row;
+}
+.StardContentView>ul>li{
+    list-style: none;
+}
