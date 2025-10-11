@@ -7,6 +7,6 @@ import FormLogin from './Paginas/FormLogin.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <FormLogin />
+    <App />
   </StrictMode>,
 )
