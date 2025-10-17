@@ -5,11 +5,8 @@ import App from './App.jsx'
 import FormLogin from './Paginas/FormLogin.jsx'
 import Header from './componentes/Header/Header.jsx'
 
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App /> 
-    {/* <Header/>
-    <FormLogin /> */}
+    <App />
   </StrictMode>,
 )

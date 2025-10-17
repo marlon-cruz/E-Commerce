@@ -37,7 +37,7 @@
     margin-top: 10px;
 }
 .headerComponent>div:nth-child(2) input{
-    width: 100%;
+    width: 80%;
     height: 40px;
     background: #fffff0;
     /* border-radius: 16px; */
@@ -51,11 +51,12 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    width: 25%;
      
 }
 .headerComponent>div:last-child img{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     margin: 0px;
     padding: 0px;
     cursor: pointer;
@@ -68,10 +69,69 @@
 .headerComponent>div:last-child>img:last-child{
     margin-top: -20px;
 }
-img{
+.headercontenicon{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.headercontenicon img{
     width: 50px;
     height: 50px;
 }
+.headercontenicon>img:nth-child(2){
+    position: absolute;
+    top: 0px;
+}
+.contentMenuHover{
+    position: absolute;
+    top: 60px;
+    right: 9%;
+    font-size: 0.8rem;
+    list-style: none;
+    text-decoration: none;
+    color: #1d1d1d;
+    background-color: #fffff0;
+    padding: 0;
+    display: none;
+}
+.contentMenuHoverActive{
+    display: block;
+}
+
+/* .contentMenuHover::after{
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 20%;
+    top: -25%;
+    left: 40%;
+    background-color: #1d1d1d;
+    border-top-right-radius: 40%;
+  
+}
+
+.contentMenuHover::before{
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 20%;
+    top: -25%;
+    left: 30%;
+    background-color: #1d1d1d;
+    border-top-left-radius: 40%;
+  
+} */
+.contentMenuHover>a>li{
+    color: #1d1d1d;
+}
+.contentMenuHover>a{
+    text-decoration: none;
+}
+.contentMenuHover>a>li:Hover{
+    color: #000;
+    border-bottom: 1px solid #1d1d1d;
+}
+
 
 @media (width > 600px) {
     .headerComponent>div:nth-child(2) input{
