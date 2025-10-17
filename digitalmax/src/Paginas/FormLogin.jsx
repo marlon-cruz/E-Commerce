@@ -1,11 +1,19 @@
-import '../index.css'
-import { Inputs } from '../components/Inputs'
-import { Buttons } from '../components/Buttons'
+import '../Paginas/FormLogin.css'
+import { Inputs } from '../componentes/InputsLogin/Inputs'
+import { Buttons } from '../componentes/ButtonLogin/Buttons'
+import { useNavigate } from 'react-router-dom'
+
 
 
 function FormLogin(){
+    const navigate = useNavigate();
+    const handleLogin = () =>{
+        navigate('/app/productos')
+    }
     return(
+        <>
     <section className='Login'>
+        
         <h2 className="textSubTitle texth2">Bienvenido a DigitalMax</h2>
         <h3 className="textName texth3">Nombre</h3>
         <Inputs type = "text" name="input_name input" placeholder="Nombre" required = {true}/>
@@ -20,11 +28,10 @@ function FormLogin(){
         <aside>
             <Buttons name = "registrarse buttons" text='Registrarse'/>
             <h3 className= "textO">o</h3>
-            <Buttons name = "acceder buttons" text='Acceder'/>
+            <Buttons click={handleLogin} name = "acceder buttons" text='Acceder'/>
         </aside>
-        
-
     </section>
+        </>
     )
 }
 export default FormLogin
