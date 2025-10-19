@@ -12,6 +12,8 @@ import FormLogin from './Paginas/FormLogin.jsx'
 import ProductosLayout from './layout/ProductosLayout/Productos.jsx'
 import LayoutMenuHamburguesa from './layout/LayoutMenuHamburguesa.jsx'
 
+import LoginLayout from './layout/LoginLayout/LoginLayout.jsx'
+
 function App() {
   const [count, setCount] = useState(0)
   
@@ -27,8 +29,11 @@ function App() {
         <Route path='/app' element={<LayoutMenuHamburguesa/>}>{/* Envuelvo con el MenuHamburguesa */}
         <Route path="/app/productos" element={<ProductosLayout/>}/>
         <Route path="/app/productos/producto/1" element={<DetallesLayout/>}/> {/* Ruta de detalle de producto EL 1 ES TEMPORAL */}
-        <Route path="*" element={ <div>Pagina no encontrada - 404</div> }/>
+        <Route path="/app/login" element={<LoginLayout/>}/> {/* acceso a la ruta de Login */}
+        <Route path="*" element={ <div>Pagina no encontrada - 404</div> }/>       
+
         </Route>
+
       </Route>
       </Routes>
       

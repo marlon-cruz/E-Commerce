@@ -1,0 +1,22 @@
+
+.inputForm{
+    width: 100%;
+}
+.inputForm>input{
+    width: 80%;
+    margin-left: 10%;
+    height: 30px;
+    background-color: transparent;
+    color: #1d1d1d;
+    outline: none;
+    border-radius: 5px;
+}
+.inputForm > h3{
+    font-size: 10px;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 5px;
+    margin-left: 9%;
+    font-weight: normal;
+}
+
