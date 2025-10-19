@@ -8,7 +8,7 @@ import engranaje from '../../assets/img/Icon_engranaje.png'
 import { useState } from 'react'
 
 import { useNavigate } from 'react-router-dom'
-import FormLogin from '../../Paginas/FormLogin'
+import FormLogin from '../../layout/LayoutCrearCuenta/LayoutCrearCuenta'
 
 
 
