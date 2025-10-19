@@ -12,7 +12,7 @@ function App() {
   
   return (
     <>
-
+        
     <HamburguerMenu/>
     <Header/>
     <DetallesLayout/>
