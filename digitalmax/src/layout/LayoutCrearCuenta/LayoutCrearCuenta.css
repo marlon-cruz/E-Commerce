@@ -50,7 +50,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 2.375rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin: 0%;
 }
 .texth3{
@@ -62,6 +62,13 @@ body{
     align-self: flex-start;
     font-family: var(--font-family-secundary);
 }
+.linkAcceder{
+    font-family: var(--font-family-secundary);
+    color: var(--color-secundary);
+    align-self: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 aside{
     display: flex;
     flex-direction: row;
@@ -70,25 +77,7 @@ aside{
     gap: 2.313rem;
     
 }
-.registrarse{
-    background-color: var(--color-secundary);
-    border: 1px solid var(--color-secundary);
-    color: var(--color-primary);
-    font-family: var(--font-family-secundary);
-    font-weight: bold;
-    border-radius: 9px;
-    /* width: 5.375rem; */
-    width: 10.75rem;
-    height: 2.75rem;
-    cursor: pointer;
-}
-.textO{
-    display: flex;
-    font-family: var(--font-family-secundary);
-    margin: 0%;
-    align-items: center;
 
-}
 .acceder{
     font-family: var(--font-family-secundary);
     font-weight: bold;
