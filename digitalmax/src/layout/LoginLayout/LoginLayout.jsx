@@ -23,8 +23,10 @@ function LoginLayout(){
         <div className='contenedorPadreLogin'>
             <div className='LoginContent'>
              <h2>Bienvenido a DigitalMax</h2>
-            <InputForm place={'Correo electronico'} label={"Correo"} name = {'Correo'} />  
-            <InputForm place={'Contraseña'} label={"Contraseña"} name = {'contraseña'} />  
+             <div className='contentInputLogin'>
+                <InputForm place={'Correo electronico'} label={"Correo"} name = {'Correo'} />  
+                <InputForm place={'Contraseña'} label={"Contraseña"} name = {'contraseña'} />  
+            </div>
             <a>¿Olvidaste tu contraseña?</a>
             <div className='contentSocialLogin'>
             <SocialLoginButton icon = {icon_Facebook} alt={"FaceBook"} colorClass={"blue"} socialName={"Facebook"}/>

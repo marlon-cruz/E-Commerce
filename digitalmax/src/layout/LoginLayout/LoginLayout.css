@@ -20,7 +20,13 @@
 }
 .LoginContent>h2{
     text-align: center;
-    margin-bottom: 5%;
+    margin-bottom:10%;
+
+}
+.contentInputLogin{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 
 }
 .LoginContent>a{
@@ -44,7 +50,7 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    margin-top: 20%;
+    margin-top: 10%;
     margin-bottom: 10%;
     justify-content: center;
 }

@@ -163,6 +163,6 @@
 @media (width>1150px) {
     .headerComponent>div:nth-child(2) input{
         width: 700px;
-        margin-left: -100px;
+        margin-left: 130px;
     }
 }
