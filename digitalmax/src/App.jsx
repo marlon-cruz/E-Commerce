@@ -8,9 +8,10 @@ import Header from './componentes/Header/Header'
 import DetallesLayout from './layout/DetallesLayout/DetallesLayout'
 import ButtonContactUser from './componentes/ButtonContactUser/ButtonContactUser'
 import viteLogo from '/vite.svg'
-import FormLogin from './Paginas/FormLogin.jsx'
+import LayoutCrearCuenta from './layout/LayoutCrearCuenta/LayoutCrearCuenta.jsx'
 import ProductosLayout from './layout/ProductosLayout/Productos.jsx'
 import LayoutMenuHamburguesa from './layout/LayoutMenuHamburguesa.jsx'
+import LoginLayout from './layout/LoginLayout/LoginLayout.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,14 +22,17 @@ function App() {
       <Routes>{/* Para el contenedor de rutas */}
       
       <Route path='/' element={<LayoutPadre/>}>{/* Envuelvo las rutas en un LayoutPadre el cual lleva el MenuHeader */}
-        <Route index element={<FormLogin/>}/>{/* Definimos la ruta */}
-      
-      
+        <Route index element={<LayoutCrearCuenta/>}/>{/* Definimos la ruta */}
+        <Route path='/Login' element={<LoginLayout/>}/>{/* Definimos la ruta de Login */}
+    
         <Route path='/app' element={<LayoutMenuHamburguesa/>}>{/* Envuelvo con el MenuHamburguesa */}
         <Route path="/app/productos" element={<ProductosLayout/>}/>
         <Route path="/app/productos/producto/1" element={<DetallesLayout/>}/> {/* Ruta de detalle de producto EL 1 ES TEMPORAL */}
-        <Route path="*" element={ <div>Pagina no encontrada - 404</div> }/>
+        <Route path="/app/login" element={<LoginLayout/>}/> {/* acceso a la ruta de Login */}
+        <Route path="*" element={ <div>Pagina no encontrada - 404</div> }/>       
+
         </Route>
+
       </Route>
       </Routes>
       

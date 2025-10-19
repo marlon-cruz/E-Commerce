@@ -7,6 +7,9 @@ import search from '../../assets/img/icon search.png'
 import engranaje from '../../assets/img/Icon_engranaje.png'
 import { useState } from 'react'
 
+import { useNavigate } from 'react-router-dom'
+import FormLogin from '../../layout/LayoutCrearCuenta/LayoutCrearCuenta'
+
 
 
 function Header(){
@@ -14,9 +17,22 @@ function Header(){
   const cambioMenu = () =>{
     setMenu(!menu)
   }
+  const navigate = useNavigate();
+    const handleAccessRegistro = () =>{
+        navigate('')
+        setMenu(false)
+    }
+    const handleAccessLogin = () =>{
+        navigate('/app/login')
+            setMenu(false)
+      }
+    const handleAccessProduct = () =>{
+        navigate('/app/productos')
+            setMenu(false)
+      }
     return(
         <header className='headerComponent'>
-            <div>
+            <div onClick={handleAccessProduct}>
             <img className='logoEcommer' src= {logo} alt="DigitalMax" />
             <h2>DigitalMax</h2>
             </div>
@@ -33,8 +49,8 @@ function Header(){
                   </div>
                     <img src= {user} alt=""  onClick={cambioMenu}/>
                      <ul className={`contentMenuHover ${menu ? 'contentMenuHoverActive': ''}`}>
-                      <a href=""><li>Registrate</li></a> <hr/>
-                      <a href=""><li>Iniciar Sesión</li></a>
+                      <a   onClick={handleAccessRegistro}><li>Registrate</li></a> <hr/>
+                      <a  onClick={handleAccessLogin}><li>Iniciar Sesión</li></a>
                     </ul>
                     <img src= {engranaje} alt="" />
 

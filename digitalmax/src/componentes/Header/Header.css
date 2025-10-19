@@ -15,6 +15,7 @@
 .headerComponent>div:first-child{
     display: flex;
     flex-direction: row;
+    cursor: pointer;
    
 }
 .headerComponent>div:first-child h2{
@@ -126,6 +127,7 @@
 }
 .contentMenuHover>a{
     text-decoration: none;
+    cursor: pointer;
 }
 .contentMenuHover>a>li:Hover{
     color: #000;
