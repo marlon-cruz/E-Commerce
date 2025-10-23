@@ -1,0 +1,76 @@
+.contenedorPadreLogin{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+}
+
+.contenedorPadreLogin>.LoginContent{ 
+    max-width: 700px;
+    width: 60%;
+    margin-top: 20px;
+    border: 2px solid #0066ff;
+    border-radius: 60px;
+    background-image: url('../../img/logo_transparente.png');
+     background-repeat: no-repeat;
+    background-position: 50% 55%;
+    background-size: 80%;
+}
+.LoginContent>h2{
+    text-align: center;
+    margin-bottom:10%;
+
+}
+.contentInputLogin{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.LoginContent>a{
+    font-size: 10px;
+    text-align: right;
+    position: absolute;
+    left: 58%;
+}
+.contentSocialLogin{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.contentAcciont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    justify-content: center;
+}
+.contentAcciont>.LoginCreate_Clase{
+    color: #0066ff;
+    text-decoration-line: underline;
+    font-size: 10px; 
+    cursor: pointer;
+}
+
+@media (width < 600px) {
+    .LoginContent{
+        min-width: 80%;
+        margin-left: 0px;
+    }
+    .contenedorPadreLogin{
+        margin-top: 10vh;
+    }
+    .LoginContent>a{
+        right: 20%;
+    }
+    
+}

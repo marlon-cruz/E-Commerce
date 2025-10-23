@@ -7,7 +7,12 @@ import CardCategoria from '../../componentes/CardCategoria/CardCategoria'
 
 import CardProduct from '../../componentes/CardProduct/CardProduct'
 import ButtonContactUser from '../../componentes/ButtonContactUser/ButtonContactUser'
+import { useNavigate } from 'react-router-dom'
 function Productos() {
+    const navigate = useNavigate();
+    const handleProducto = () =>{
+        navigate('/app/productos/producto/1')
+    }
   return (
     
     <>
@@ -22,16 +27,16 @@ function Productos() {
       </div>
         <h2 className='subtituloProductos'>Productos</h2>
       <div className="contentProduct">
-      <CardProduct  src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
-      <CardProduct  src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
-      <CardProduct  src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
-      <CardProduct  src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
-      <CardProduct  src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
-      <CardProduct  src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
-      <CardProduct  src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
-      <CardProduct  src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
-      <CardProduct  src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
-      <CardProduct  src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
+      <CardProduct click={handleProducto} src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
+      <CardProduct click={handleProducto} src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
+      <CardProduct click={handleProducto} src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
+      <CardProduct click={handleProducto} src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
+      <CardProduct click={handleProducto} src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
+      <CardProduct click={handleProducto} src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
+      <CardProduct click={handleProducto} src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
+      <CardProduct click={handleProducto} src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
+      <CardProduct click={handleProducto} src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
+      <CardProduct click={handleProducto} src = {viteLogo} description = "Mouse inalambrico ergonomico" precio = "13.99" />
 
       </div>
 
