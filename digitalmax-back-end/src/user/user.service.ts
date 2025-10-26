@@ -9,7 +9,7 @@ export class UserService {
     constructor(@InjectModel(User.name) private userModel: Model<User>){}
 
     finALL(){
-        this.userModel.find();
+       return this.userModel.find();
     }
 
     async create(createUser: CreateUserDTO){

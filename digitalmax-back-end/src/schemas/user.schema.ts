@@ -5,10 +5,6 @@ import { Schema, Prop, SchemaFactory } from "@nestjs/mongoose";
     timestamps:true
 })
 export class User {
-    @Prop({
-        required:true, unique:true
-    })
-    id: String;
     
     @Prop({
         required:true, trim:true
