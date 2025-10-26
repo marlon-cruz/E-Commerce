@@ -6,14 +6,14 @@ export class CreateUserDTO {
         nombre: string;
         @IsString()
         @IsNotEmpty()
-        Telefono: string;
+        telefono: string;
         @IsString()
         @IsNotEmpty()
         correo: string;
         @IsString()
         @IsNotEmpty()
         contraseña:string;
+        @IsOptional()
         @IsString()
-        @IsNotEmpty()
         status: string;
 }

@@ -15,7 +15,7 @@ export class User {
         required:true, trim:true
     })
     
-    Telefono: string;
+    telefono: string;
     
     @Prop({
         required:true, trim:true, unique:true
@@ -30,9 +30,9 @@ export class User {
     contraseña:string;
     
     @Prop({
-        required:true, unique:true, default:'inactive'
+        required:true, unique:false ,default:'active'
     })
     status: string;
 }
 
-export const userShecma = SchemaFactory.createForClass(User)
+export const userShecma = SchemaFactory.createForClass(User);
