@@ -21,9 +21,11 @@ export class UserService {
         
     }
 
-    async findOne(id:string){
-        return this.userModel.findById(id);
+    async findOne(correouser:string){
+        return await this.userModel.findOne({ correo: correouser});
     }
+
+
     async eliminarUser(id:string){
         return this.userModel.findByIdAndDelete(id);
     }

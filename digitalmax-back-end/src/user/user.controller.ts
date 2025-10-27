@@ -17,10 +17,10 @@ export class UserController {
         return consulta;
         
     }
-    @Get(':id')
-    async findOne(@Param('id') id:string){
+    @Get(':correo')
+    async findOne(@Param('correo') correouser:string){
        
-        const consulta = await this.userService.findOne(id);
+        const consulta = await this.userService.findOne(correouser);
         if(!consulta){
             throw new ConflictException("Usuario no existente")
         }else{
@@ -28,8 +28,8 @@ export class UserController {
         }
         
     }
+
     @Post()
-    
     create(@Body()CreateUser: CreateUserDTO){
          try {
             return  this.userService.create(CreateUser);
