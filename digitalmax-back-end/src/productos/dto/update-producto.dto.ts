@@ -3,24 +3,30 @@ import { CreateProductoDto } from './create-producto.dto';
 import { IsOptional } from 'Class-validator';
 
 export class UpdateProductoDto extends PartialType(CreateProductoDto) {
-    @IsOptional()
-    imagenUrl?: string;
-
-    @IsOptional()
-    nombre?: string;
-    
-    @IsOptional()
-    descripcion?: string;
-
-    @IsOptional()
-    valoracion?: number;
-    
-    @IsOptional()
-    precio?: number;
-
-    @IsOptional()
-    categoria?: string;
-    
-    @IsOptional()
-    stock?: number;
+  @IsOptional()
+  nombre: string;
+  @IsOptional()
+  categoria: string;
+  @IsOptional()
+  marca: string;
+  @IsOptional()
+  modelo: string;
+  @IsOptional()
+  imagenUrl: string;
+  @IsOptional()
+  precio: number;
+  @IsOptional()
+  descuento: number;
+  @IsOptional()
+  stock: number;
+  @IsOptional()
+  descripcion: string;
+  @IsOptional()
+  especificaciones: string;
+  @IsOptional()
+  detallesFisicos: string;
+  @IsOptional()
+  paisOrigen: string;
+  @IsOptional()
+  valoracion: number;
 }

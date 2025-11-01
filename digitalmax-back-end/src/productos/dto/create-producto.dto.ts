@@ -1,30 +1,47 @@
-import { IsNotEmpty, IsNumber, IsString } from 'Class-validator';
+import { IsEmpty, IsNotEmpty, IsNumber, IsString } from 'Class-validator';
 
 export class CreateProductoDto {
-    @IsNotEmpty()
-    @IsString()
-    imagenUrl: string;
+  @IsNotEmpty()
+  @IsString()
+  nombre: string;
+  @IsNotEmpty()
+  @IsString()
+  categoria: string;
 
-    @IsNotEmpty()
-    @IsString()
-    nombre: string;
-    
-    @IsNotEmpty()
-    @IsString()
-    descripcion: string;
-    @IsNotEmpty()
-    @IsNumber()
-    valoracion: number;
-    
-    @IsNotEmpty()
-    @IsNumber()
-    precio: number;
+  @IsNotEmpty()
+  @IsString()
+  marca: string;
+  @IsNotEmpty()
+  @IsString()
+  modelo: string;
+  @IsNotEmpty()
+  @IsString()
+  imagenUrl: string;
 
-    @IsNotEmpty()
-    @IsString()
-    categoria: string;
-    
-    @IsNotEmpty()
-    @IsNumber()
-    stock: number;
+  @IsNotEmpty()
+  @IsNumber()
+  precio: number;
+
+  @IsNotEmpty()
+  @IsNumber()
+  descuento: number;
+  @IsNotEmpty()
+  @IsNumber()
+  stock: number;
+  @IsNotEmpty()
+  @IsString()
+  descripcion: string;
+  @IsNotEmpty()
+  @IsString()
+  especificaciones: string;
+
+  @IsNotEmpty()
+  @IsString()
+  detallesFisicos: string;
+  @IsNotEmpty()
+  @IsString()
+  paisOrigen: string;
+  @IsNotEmpty()
+  @IsNumber()
+  valoracion: number;
 }
