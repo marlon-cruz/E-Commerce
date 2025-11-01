@@ -4,7 +4,7 @@ function ButtonDetallesProduct(prop){
     return(
         <div className="contentButtonDetalles">
                 <span>-</span>
-                     1
+                <div>1</div>
                 <span>+</span>
         </div>
     );

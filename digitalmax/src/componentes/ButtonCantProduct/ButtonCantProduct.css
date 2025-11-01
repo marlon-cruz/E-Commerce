@@ -7,19 +7,21 @@
     align-items: center;
     font-size: 2rem;
     border-radius: 10px;
-    border: 3px solid #0066ff;
-    color: #0066ff;
+    border: 1px solid var(--color-secundary);
+    color: var(--color-blank);
     transition: all 0.5s ease;
 }
 .contentButtonDetalles>span{
-    color: #1d1d1d;
+    color: var(--color-secundary);
     cursor: pointer;
 }
-
-.contentButtonDetalles:hover{
-    background: #0066ff;
-    color: #fffff0;
+.contentButtonDetalles>span:hover{
+    color: var(--color-blank);
+}
+/* .contentButtonDetalles:hover{
+    background: var(--color-secundary);
+    color: var(--color-primary);
 }
 .contentButtonDetalles>span:hover{
-    color: #fffff0;
-}
+    color: var(--color-primary);
+} */
