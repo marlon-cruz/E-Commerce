@@ -14,6 +14,7 @@ interface datasProduct {
   paisOrigen: string;
   valoracion: number;
 }
+
 export const crearProduct = async (datos: datasProduct) =>
   fetch(`${API}/productos`, {
     method: "POST",
@@ -22,3 +23,16 @@ export const crearProduct = async (datos: datasProduct) =>
       "Content-Type": "application/json",
     },
   });
+
+export const obtenerProductos = () =>
+  fetch(`${API}/productos`, {
+    method: "GET"
+  }).then((response) => {
+    return response.json()});
+
+
+export const obtenerProducto = async (id: string) =>
+  fetch(`${API}/productos/${id}`, {
+    method: "GET"
+  }).then((response) => {
+    return response.json()});

@@ -1,5 +1,5 @@
 import '../HeaderAdmin/HeaderAdmin.css'
-import logo from '../../assets/img/Logo digitalmax.png'
+import logo from '../../assets/img/Logo_digitalmax.png'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 

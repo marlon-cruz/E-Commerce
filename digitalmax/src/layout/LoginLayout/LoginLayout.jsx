@@ -1,5 +1,5 @@
 import '../LoginLayout/LoginLayout.css'
-import digitalMax from '../../assets/img/Logo digitalmax.png' 
+import digitalMax from '../../assets/img/Logo_digitalmax.png' 
 import { InputForm } from '../../componentes/InputForm/InputForm';
 import { SocialLoginButton } from '../../componentes/SocialLoginButton/SocialLoginButton';
 import icon_Facebook from '../../assets/img/icon_Facebook.png'
