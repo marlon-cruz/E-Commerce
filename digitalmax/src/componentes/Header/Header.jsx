@@ -1,6 +1,6 @@
 import '../Header/Header.css'
 import React from 'react'
-import logo from '../../assets/img/Logo digitalmax.png'
+import logo from '../../assets/img/Logo_digitalmax.png'
 import shop from '../../assets/img/icon shop.png'
 import user from '../../assets/img/icon user.png'
 import search from '../../assets/img/icon search.png'

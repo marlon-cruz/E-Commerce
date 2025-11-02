@@ -5,6 +5,17 @@ import ButtonDetallesProduct from '../ButtonCantProduct/ButtonCantProduct';
 import ButtonActionProduc from '../ButtonActionProduc/ButtonActionProduc';
 import StardCalificacion from '../StardCalificacion/StardCalificacion';
 import EstadoProducto from '../EstadoProducto/EstadoProducto';
+function ProductoStock(prop) {
+    if (prop.stock > 10) {
+        return <EstadoProducto estado="Disponible" text="En Stock" />
+    }
+    else if(prop.stock < 10 && prop.stock > 0){
+        return <EstadoProducto estado="PocasUnidades" text="Pocas Unidades" />
+    }
+    else if(prop.stock === 0){
+        return <EstadoProducto estado="Agotado" text="Agotado" />
+    }
+}
 function ProductoDescripcion(prop) {
     return (
 
@@ -19,8 +30,9 @@ function ProductoDescripcion(prop) {
             <div className='contentButonAction'>
                 <div>
                     <ButtonDetallesProduct />
-                    <p>20% de Descuento</p>
-                    <EstadoProducto estado="Disponible" text="En Stock"/>
+                    <p>{prop.descuento}% de Descuento</p>
+
+                    <ProductoStock stock={prop.stock} />
                 </div>
                 <span>
                     <ButtonActionProduc status="ActionActivo" text="Agregar al carrito" />
