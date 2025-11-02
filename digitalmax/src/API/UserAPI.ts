@@ -27,7 +27,8 @@ export const crearUser = async (datos: datasUser) =>
 export const obtenerUsers = async (datos: datosLoginUser) => 
     fetch(`${API}/user/${datos.correo}`, {
         method: 'GET'
-    })
+})
+
 export const obtenerUserID = async (id:string) => 
     fetch(`${API}/user/${id}`, {
         method: 'GET',

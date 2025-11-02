@@ -9,7 +9,7 @@ import { Buttons } from '../../componentes/ButtonLogin/Buttons';
 import { useNavigate } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
-import { crearUser, obtenerUsers } from '../../API/userAPI';
+import { crearUser, obtenerUsers } from '../../API/UserAPI';
 
 
 function LoginLayout(){
@@ -27,6 +27,7 @@ function LoginLayout(){
         
         const handleChangeLogin = (event) => {
             setDataLogin({...dataLogin, [event.target.name] : event.target.value});
+          
         }
         const submitLogin = async () =>{
             try {
