@@ -24,7 +24,7 @@ function Header() {
     setMenu(false)
   }
   return (
-    <header className='headerComponent'>
+    <header className='headerComponentAdmin'>
       <div onClick={handleAccessProduct}>
         <img className='logoEcommer' src={logo} alt="DigitalMax" />
         <h2>Administrador DigitalMax</h2>
