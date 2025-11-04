@@ -6,6 +6,7 @@ import FrameAgregarProducto from "../../componentes/FrameAgregarProducto/FrameAg
 import productosLogo from '../../assets/img/productosAdminIcon.png'
 import pedidosLogo from '../../assets/img/pedidosAdminIcon.png'
 import clientesLogo from '../../assets/img/clientesAdminIcon.png'
+import HeaderAdmin from '../../componentes/HeaderAdmin/HeaderAdmin'
 
 import { useState } from "react"
 function AdminPanel(){
@@ -40,6 +41,8 @@ function AdminPanel(){
     }
     
     return(
+        <>
+    <HeaderAdmin/>
     <div className="contentPanel">
         <div className="adminMenuPanel">
             <AdminMenu text = {"Productos >"} icon = {productosLogo} event={handleClickMenuProductos}/>
@@ -59,6 +62,8 @@ function AdminPanel(){
             </ul>
         </div>
     </div>
+    
+        </>
         
        
     )    

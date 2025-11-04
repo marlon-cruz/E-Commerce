@@ -1,5 +1,5 @@
 const API = "http://localhost:3000";
-
+import { useState } from "react";
 interface datasProduct {
   nombre: string;
   categoria: string;
@@ -36,3 +36,6 @@ export const obtenerProducto = async (id: string) =>
     method: "GET"
   }).then((response) => {
     return response.json()});
+
+
+    export const userStats = "/app/admin"

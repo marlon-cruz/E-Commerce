@@ -14,9 +14,13 @@ import LayoutMenuHamburguesa from './layout/LayoutMenuHamburguesa.jsx'
 import LoginLayout from './layout/LoginLayout/LoginLayout.jsx'
 import AdminPanel from './layout/AdminPanel/AdminPanel.jsx'
 import { obtenerProducto } from './API/ProductosAPI.js'
+
+
 function App() {
   const [count, setCount] = useState(0)
-  
+  function cambioSegunUsuario(){
+    
+  }
   return (
     <>
     <Router>{/* Envolvemos la aplicación */}
@@ -25,7 +29,7 @@ function App() {
       <Route path='/' element={<LayoutPadre/>}>{/* Envuelvo las rutas en un LayoutPadre el cual lleva el MenuHeader */}
         <Route index element={<LayoutCrearCuenta/>}/>{/* Definimos la ruta */}
 
-        {/* <Route path = '/Login' element = {<AdminPanel/>}></Route>       */}
+        <Route path = '/app/admin' element = {<AdminPanel/>}></Route>       
         <Route path = '/Login' element = {<LoginLayout/>}></Route>      
         <Route path='/app' element={<LayoutMenuHamburguesa/>}>{/* Envuelvo con el MenuHamburguesa */}
         <Route path="/app/productos" element={<ProductosLayout/>}/>

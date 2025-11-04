@@ -11,6 +11,8 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { crearUser, obtenerUsers } from '../../API/UserAPI';
 
+import { userStats } from '../../API/ProductosAPI';
+
 
 function LoginLayout(){
 
@@ -35,7 +37,11 @@ function LoginLayout(){
             const res =  await obtenerUsers(dataLogin).then(res => res.json()).then((data) => {
             if(data.contraseña == dataLogin.contraseña){
                 alert("BIENVENIDO A DIGITALMAX")
+                if (data.status != "inactive"){
+                  navigateReguistre(userStats)
+                }else{
                   navigateReguistre('/app/productos')
+                }
 
             }else{
                 alert("Contraeña y/o usuario incorrectos, acceso denegado")
