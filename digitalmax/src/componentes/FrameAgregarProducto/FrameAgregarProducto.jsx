@@ -28,7 +28,7 @@ function FrameAgregarProducto(){
         const imagenAntigua = document.getElementById("archivo_subir")
         imagenAntigua.value = ""
         setDataProduct({
-        nombre :  "" ,
+         nombre :  "" ,
          categoria :  "" ,
          marca :  "" ,
          modelo :  "" ,
@@ -41,9 +41,12 @@ function FrameAgregarProducto(){
          detallesFisicos :  "",
          paisOrigen :  "" ,
          valoracion : 3,
-        }
-            
-        )
+        })
+        let inputsClen = document.querySelectorAll('input')
+        
+        inputsClen.forEach(element => {
+            element.value = ""
+        });
     }
     
     function handleChaneValue(event){
@@ -53,7 +56,6 @@ function FrameAgregarProducto(){
         }else{
             setDataProduct({...dataProduc, [event.target.name] : event.target.value})     
         }
-        console.log(dataProduc)
        
     }
     
@@ -141,7 +143,7 @@ function FrameAgregarProducto(){
                   
         </div>
         <div className='contentButonAdmin'>
-            <ButtonActionProduc text = {"Cancelar"} />
+            <ButtonActionProduc  Click = {resetStatusForm} text = {"Cancelar"} />
             <ButtonActionProduc Click = {handleSubmitProducto} text = {"Guardar"} status = {"ActionActivo"}/>
         </div>
 
