@@ -54,6 +54,7 @@ const cambioStadozoom  = () =>{
                     </div>
                     <div className='contentImageSec'>
                         <img onClick={() => {handleZoomImg(props.imagen2)}} src={props.imagen2} alt="Producto" />
+                        <img onClick={() => {handleZoomImg(props.imagen3)}} src={props.imagen3} alt="Producto" />
                     </div>
                 </main>
                 <main className='calificacionPrecio'>

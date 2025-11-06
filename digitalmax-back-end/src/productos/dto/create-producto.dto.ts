@@ -20,7 +20,9 @@ export class CreateProductoDto {
   @IsNotEmpty()
   @IsString()
   imagenUrl1: string;
-
+  @IsNotEmpty()
+  @IsString()
+  imagenUrl2: string;
 
   @IsNotEmpty()
   @IsNumber()

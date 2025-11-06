@@ -3,6 +3,8 @@ import { InputForm } from "../../componentes/InputForm/InputForm";
 import ButtonActionProduc from "../ButtonActionProduc/ButtonActionProduc";
 import { useState } from "react";
 import { crearProduct } from "../../API/ProductosAPI";
+import imageCompression from 'browser-image-compression';
+
 function FrameAgregarProducto() {
   const [textImg, setTextImage] = useState("");
 
@@ -13,7 +15,7 @@ function FrameAgregarProducto() {
     modelo: "",
     imagenUrl: " ",
     imagenUrl1: " ",
-
+    imagenUrl2: " ",
     precio: 0,
     descuento: 0,
     stock: 0,
@@ -38,7 +40,7 @@ function FrameAgregarProducto() {
       modelo: "",
       imagenUrl: " ",
       imagenUrl1: " ",
-
+      imagenUrl2: " ",
       precio: 0,
       descuento: 0,
       stock: 0,
@@ -71,6 +73,7 @@ function FrameAgregarProducto() {
         [event.target.name]: event.target.value,
       });
     }
+    console.log(dataProduc);
   }
 
   const handleSubmitProducto = async (event) => {
@@ -87,18 +90,23 @@ function FrameAgregarProducto() {
     }
     resetStatusForm();
   };
-  function handleImageText(event) {
-    const image = event.target.files[0];
+
+  async function  handleImageText(event) {
+    const options = {
+    maxSizeMB: 0.01,         
+    maxWidthOrHeight: 800,   
+    useWebWorker: true, 
+  };
+  let dataImageCompress = '';
+    const image =   await imageCompression(event.target.files[0], options).then((data) => {dataImageCompress = data})
+    console.log(event.target.files[0])
+    console.log(image)
+    
     const lector = new FileReader();
-    const id = event.target.id
-    console.log(id)
     lector.onload = () => {
       setDataProduct({ ...dataProduc, [event.target.name]: lector.result });
     };
-    console.log(dataProduc)
-
-    lector.readAsDataURL(image);
-    console.log(dataProduc.imagenUrl);
+    lector.readAsDataURL(dataImageCompress);
   }
 
   return (
@@ -151,6 +159,13 @@ function FrameAgregarProducto() {
             onChange={handleImageText}
             id="archivo_subir1"
             name="imagenUrl1"
+            className="subirImagenes"
+          />
+          <input
+            type="file"
+            onChange={handleImageText}
+            id="archivo_subir2"
+            name="imagenUrl2"
             className="subirImagenes"
           />
         
