@@ -14,6 +14,9 @@ export class UpdateProductoDto extends PartialType(CreateProductoDto) {
   @IsOptional()
   imagenUrl: string;
   @IsOptional()
+  imagenUrl1: string;
+
+  @IsOptional()
   precio: number;
   @IsOptional()
   descuento: number;

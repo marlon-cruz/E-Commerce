@@ -5,6 +5,8 @@ interface datasProduct {
   categoria: string;
   marca: string;
   imagenUrl: string;
+  imagenUr1: string;
+
   precio: number;
   descuento: number;
   stock: number;

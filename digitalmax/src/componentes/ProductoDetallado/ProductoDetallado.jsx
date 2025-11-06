@@ -3,12 +3,15 @@ import ProductoDescripcion from '../../componentes/ProductoDescripcion/ProductoD
 import PreciosComprar from '../../componentes/PreciosComprar/PreciosComprar';
 import '../ProductoDetallado/ProductoDetallado.css'
 import ReseñaProductDetalles from '../../componentes/ReseñaProductDetalles/ReseñaProductDetalles';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import ZoomImage from '../ZoomImage/ZoomImage';
 const precioDescuento = 0;
 
 function calcularPrecioDescuento(precio, descuento) {
     return (precio - (precio * descuento) / 100).toFixed(2);
 }
+
+    
 //EN PROCESO
 // function sinDescuento(prop) {
 //     if (prop.descuento < 0) {
@@ -19,9 +22,25 @@ function calcularPrecioDescuento(precio, descuento) {
 //     }
 // }
 function ProductoDetallado(props) {
+const [statusImage, setStatusImage] = useState(false)
 
+const [imagenSrcZoom, setimagensrc] = useState("")
+
+
+function handleZoomImg(srcImage) {
+
+        setimagensrc(srcImage)
+        setStatusImage(!statusImage)
+}
+
+const cambioStadozoom  = () =>{
+        setStatusImage(!statusImage)
+
+}
     return (
         <>
+
+        {statusImage? <ZoomImage cambio={cambioStadozoom}  img={imagenSrcZoom} /> : null}
             <section className='contentDetallesSection'>
                 <main className="contentDetalles">
                     <div className='infoProducto'>
@@ -31,7 +50,10 @@ function ProductoDetallado(props) {
                         <p>{props.modelo}</p>
                     </div>
                     <div className='imgProducto'>
-                        <img src={props.imagen} alt="Producto" />
+                        <img onClick={() => {handleZoomImg(props.imagen)}} src={props.imagen} alt="Producto" />
+                    </div>
+                    <div className='contentImageSec'>
+                        <img onClick={() => {handleZoomImg(props.imagen2)}} src={props.imagen2} alt="Producto" />
                     </div>
                 </main>
                 <main className='calificacionPrecio'>
