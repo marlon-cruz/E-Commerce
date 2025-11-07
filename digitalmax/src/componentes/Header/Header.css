@@ -171,14 +171,14 @@
     .headerComponent>div:first-child img{
         margin-top: 10px;
         margin-left: 10px;
-         width: 50px;
-        height: 50px;
+         width: 40px;
+        height: 40px;
     }
     .headerComponent>div:last-child img{
         margin-top: 10px;
         margin-right: 10px;
-        width: 40px;
-        height:40px;
+        width: 20px;
+        height:20px;
     }
     .headerComponent>div:last-child img:last-child{
         margin-top: 10px;

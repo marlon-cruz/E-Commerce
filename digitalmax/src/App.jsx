@@ -29,7 +29,7 @@ function App() {
       <Route path='/' element={<LayoutPadre/>}>{/* Envuelvo las rutas en un LayoutPadre el cual lleva el MenuHeader */}
         <Route index element={<LayoutCrearCuenta/>}/>{/* Definimos la ruta */}
 
-        <Route path = '/app/admin' element = {<AdminPanel/>}></Route>       
+              
         <Route path = '/Login' element = {<LoginLayout/>}></Route>      
         <Route path='/app' element={<LayoutMenuHamburguesa/>}>{/* Envuelvo con el MenuHamburguesa */}
         <Route path="/app/productos" element={<ProductosLayout/>}/>
@@ -41,6 +41,7 @@ function App() {
         </Route>
 
       </Route>
+      <Route path = '/app/admin' element = {<AdminPanel/>}></Route> 
       </Routes>
       
     </Router>

@@ -7,7 +7,7 @@ import icon_Facebook from '../../assets/img/icon_Facebook.png'
 import icon_Google from '../../assets/img/icon_Google.png'
 import { useState } from 'react'
 import { ChangeEvent } from 'react'
-import { crearUser } from '../../API/userAPI'
+import { crearUser } from '../../API/UserAPI'
 
 
 
