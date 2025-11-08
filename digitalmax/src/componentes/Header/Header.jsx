@@ -31,6 +31,10 @@ function Header() {
     navigate("/app/productos");
     setMenu(false);
   };
+   const handleAccessCarrto = () => {
+    navigate("/app/carretilla");
+    setMenu(false);
+  };
   return (
     <header className="headerComponent">
       <div onClick={handleAccessProduct}>
@@ -43,7 +47,7 @@ function Header() {
         <img src={search} alt="" />
       </div>
       <div className="headercontenicon">
-        <div>
+        <div onClick={handleAccessCarrto}>
           <img src={shop} alt="" />
           <p>$0.00</p>
         </div>

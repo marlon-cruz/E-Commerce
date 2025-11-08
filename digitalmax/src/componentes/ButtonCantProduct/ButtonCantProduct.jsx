@@ -19,7 +19,7 @@ function ButtonDetallesProduct(prop){
     }
 
     return(
-        <div className="contentButtonDetalles">
+        <div className= {`contentButtonDetalles ${prop.carritoBtnCant}`}>
                 <span onClick={() => {conteo("-")}}>-</span>
                 <div>{countProduct}</div>
                 <span onClick={() => {conteo("+")}}>+</span>
