@@ -11,7 +11,7 @@ import { crearUser } from '../../API/UserAPI'
 
 
 
-function FormLogin(){
+function FormCrearCuenta(){
     const navigate = useNavigate();
     const handleLogin = () =>{
         navigate('/app/productos')
@@ -63,8 +63,9 @@ function FormLogin(){
     }
     return(
         <>
-    <section className='Login'>
+    <section className='CrearCuenta'>
         <h2 className="textSubTitle texth2">Bienvenido a DigitalMax</h2>
+        <div className='inputAndText'>
         <h3 className="textName texth3">Nombre</h3>
         <Inputs cambioEvent={handleChaneRegistro} type = "text" data={'nombre'} name="input_name input" placeholder="Nombre" required = {true}/>
         <h3 className="textTelefono texth3">Teléfono</h3>
@@ -75,6 +76,7 @@ function FormLogin(){
         <Inputs  cambioEvent={handleChaneRegistro}  type = "password" data={'password'} name="input_password input" placeholder="Contraseña" required = {true}/>
         <h3 className= "textPasswordConfir texth3">Confirmación de contraseña</h3>
         <Inputs cambioEvent={handleChaneRegistro}  type = "password" data={'passwordConfir'} name="input_password_confir input" placeholder="Confirme su contraseña" required = {true}/>
+        </div>
         <aside>
             <SocialLoginButton icon = {icon_Facebook} alt={"FaceBook"} colorClass={"blue"} socialName={"Facebook"}/>
             <SocialLoginButton icon = {icon_Google} alt={"Google"} colorClass={"white"} socialName={"Google"}/>
@@ -88,4 +90,4 @@ function FormLogin(){
         </>
     )
 }
-export default FormLogin
+export default FormCrearCuenta
