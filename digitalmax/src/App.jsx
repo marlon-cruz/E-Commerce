@@ -27,13 +27,14 @@ function App() {
     <Router>{/* Envolvemos la aplicación */}
       <Routes>{/* Para el contenedor de rutas */}
       
-      <Route path='/' element={<LayoutPadre/>}>{/* Envuelvo las rutas en un LayoutPadre el cual lleva el MenuHeader */}
-        <Route index element={<LayoutCrearCuenta/>}/>{/* Definimos la ruta */}
+      <Route path='/' element={ <LayoutPadre/>}>{/* Envuelvo las rutas en un LayoutPadre el cual lleva el MenuHeader */}
+      <Route index element={<ProductosLayout/>}/>
+        <Route path='/crearCuenta' element={<LayoutCrearCuenta/>}/>{/* Definimos la ruta */}
 
               
         <Route path = '/Login' element = {<LoginLayout/>}></Route>      
         <Route path='/app' element={<LayoutMenuHamburguesa/>}>{/* Envuelvo con el MenuHamburguesa */}
-        <Route path="/app/productos" element={<ProductosLayout/>}/>
+        
         <Route path={'/app/productos/producto/:id'} element={<DetallesLayout/>}/> 
         <Route path={'/app/carretilla'} element={<LayoutCarritoCompra/>}/> 
         {/* <Route path="/app/productos/producto/1" element={<DetallesLayout/>}/> Ruta de detalle de producto EL 1 ES TEMPORAL */}
