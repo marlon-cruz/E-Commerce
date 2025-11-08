@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import ZoomImage from '../ZoomImage/ZoomImage';
 const precioDescuento = 0;
 
-function calcularPrecioDescuento(precio, descuento) {
+export function calcularPrecioDescuento(precio, descuento) {
     return (precio - (precio * descuento) / 100).toFixed(2);
 }
 

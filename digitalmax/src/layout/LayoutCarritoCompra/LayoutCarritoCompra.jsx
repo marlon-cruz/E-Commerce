@@ -1,10 +1,10 @@
 import '../LayoutCarritoCompra/LayoutCarritoCompra.css'
 
-import ButtonActionProduc from '../../componentes/ButtonActionProduc/ButtonActionProduc'
-
-import ButtonCantProduct from '../../componentes/ButtonCantProduct/ButtonCantProduct';
-
+import CarritoItem from '../../componentes/CarritoItem/CarritoItem';
 function LayoutCarritoCompra(){
+    function elimianarItem(){
+        alert("Eliminar Item")
+    }
     return(
         <div className='layoutCarritoCompra'>
             <h2>MI CARRETILLA</h2>
@@ -21,14 +21,12 @@ function LayoutCarritoCompra(){
                     </tr>
                 </thead>
                 <tbody className='bodyTableCarrito'>
-                    <tr>
-                        <td>Mause</td>
-                        <td>Mouse Inalambrico KLIP XTREME Ultraergonomico KMW-760</td>
-                        <td><span>$12.54</span><p>$31</p></td>
-                        <td className='cellBtn'><ButtonCantProduct carritoBtnCant= {"CarritoCantbtn"} stock = {5}/></td>
-                        <td>$90</td>
-                        <td className='cellBtn'><ButtonActionProduc status = {"CarritoCompraBTN"} text = {"Eliminar"}/></td>
-                    </tr>
+                    <CarritoItem title={"Mouse"} descripcion={"una descripcion"} precio = {"3.5"} stock={"10"} descuento = {"10"} cantidadSelect={3} eliminarItem={elimianarItem}/>
+                    <CarritoItem title={"Mouse"} descripcion={"una descripcion"} precio = {"3.5"} stock={"10"} descuento = {"10"} cantidadSelect={3} eliminarItem={elimianarItem}/>
+                    <CarritoItem title={"Mouse"} descripcion={"una descripcion"} precio = {"3.5"} stock={"10"} descuento = {"10"} cantidadSelect={3} eliminarItem={elimianarItem}/>
+                    <CarritoItem title={"Mouse"} descripcion={"una descripcion"} precio = {"3.5"} stock={"10"} descuento = {"10"} cantidadSelect={3} eliminarItem={elimianarItem}/>
+                    <CarritoItem title={"Mouse"} descripcion={"una descripcion"} precio = {"3.5"} stock={"10"} descuento = {"10"} cantidadSelect={3} eliminarItem={elimianarItem}/>
+                 
                 </tbody>
                </table>
             </div>

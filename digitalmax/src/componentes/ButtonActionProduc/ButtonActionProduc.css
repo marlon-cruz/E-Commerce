@@ -40,6 +40,9 @@
     max-width: 70%;
     color: #fffff0;
 }
+.CarritoCompraBTN:hover{
+    background: #ff0000;
+}
 @media (width<600px){
     .CarritoCompraBTN{
         max-width: 40px;

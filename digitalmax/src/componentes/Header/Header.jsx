@@ -20,7 +20,7 @@ function Header() {
   };
   const navigate = useNavigate();
   const handleAccessRegistro = () => {
-    navigate("");
+    navigate("/crearCuenta");
     setMenu(false);
   };
   const handleAccessLogin = () => {
@@ -28,7 +28,7 @@ function Header() {
     setMenu(false);
   };
   const handleAccessProduct = () => {
-    navigate("/app/productos");
+    navigate("");
     setMenu(false);
   };
    const handleAccessCarrto = () => {
