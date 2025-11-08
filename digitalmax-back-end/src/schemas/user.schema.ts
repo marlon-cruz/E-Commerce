@@ -30,7 +30,7 @@ export class User {
     contraseña:string;
     
     @Prop({
-        required:true, unique:false ,default:'active'
+        required:true, unique:false ,default:'inactive'
     })
     status: string;
 }

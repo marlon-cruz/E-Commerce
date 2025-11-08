@@ -17,6 +17,11 @@ export class Producto {
 
     @Prop({ required: true }) //propiedad obligatoria
     imagenUrl: string;
+    @Prop({ required: true }) //propiedad obligatoria
+    imagenUrl1: string;
+    @Prop({ required: true }) //propiedad obligatoria
+    imagenUrl2: string;
+
 
 
     @Prop({ required: true })

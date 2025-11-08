@@ -29,7 +29,7 @@ function ProductoDescripcion(prop) {
             </h3>
             <div className='contentButonAction'>
                 <div>
-                    <ButtonDetallesProduct />
+                    <ButtonDetallesProduct stock={prop.stock}  />
                     <p>{prop.descuento}% de Descuento</p>
 
                     <ProductoStock stock={prop.stock} />

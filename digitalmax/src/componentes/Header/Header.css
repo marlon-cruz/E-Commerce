@@ -55,15 +55,18 @@
     width: 25%;
 }
 .headerIconUser{
-    min-height: 8vh;
+    min-height: 7vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     border-left: 3px solid #fffff0;
+
 }
 .headerIconUser>img{
     min-width: 30px;
     min-height: 30px;
+    translate: transformY(100%);
 }
 .headerComponent>div:last-child img{
     width: 20px;
@@ -178,7 +181,7 @@
         height:20px;
     }
     .headerComponent>div:last-child img:last-child{
-        margin-top: -10px;
+        margin-top: 10px;
     }
     
 }
@@ -188,8 +191,5 @@
         width: 700px;
         margin-left: 130px;
     }
-    .headercontenicon img{
-        min-height: 50px;
-        min-width:50px;
-    }
+    
 }

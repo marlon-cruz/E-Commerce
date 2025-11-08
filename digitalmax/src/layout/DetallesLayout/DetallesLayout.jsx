@@ -13,6 +13,7 @@ function DetallesLayout() {
     const [product, setProduct] = useState({});
     const [loading, setLoading] = useState(true);
 
+
     useEffect(() => {
         const fetchProduct = async () => {
             try {
@@ -40,7 +41,7 @@ function DetallesLayout() {
     return (
         <> 
         {Loading(loading)}
-        <ProductoDetallado imagen={product.imagenUrl} nombre = {product.nombre} categoria = {product.categoria} marca={product.marca} modelo = {product.modelo} precioDes = {product.precio} precio = {product.precio} descuento ={product.descuento} stock={product.stock} descripcion = {product.descripcion} especificaciones = {product.especificaciones} />
+        <ProductoDetallado imagen={product.imagenUrl} imagen2 = {product.imagenUrl1} imagen3 = {product.imagenUrl2} nombre = {product.nombre} categoria = {product.categoria} marca={product.marca} modelo = {product.modelo} precioDes = {product.precio} precio = {product.precio} descuento ={product.descuento} stock={product.stock} descripcion = {product.descripcion} especificaciones = {product.especificaciones} />
         </>
     );
 }

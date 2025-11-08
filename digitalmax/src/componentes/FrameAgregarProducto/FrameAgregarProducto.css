@@ -53,6 +53,11 @@
     font-size: 0.8rem;
     color: #1d1d1d;
 }
+.contentInputImage{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
 .subirImagenes{
     display: inline-block;
   padding: 5px 10px;
@@ -63,7 +68,7 @@
 }
 .subirImagenes::after{
     position: absolute;
-    content: 'Agregar imagenes adicionales';
+    content: 'Agregar imagen';
     display: flex;
     flex-direction: column;
     justify-content: center;
