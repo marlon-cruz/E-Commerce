@@ -11,21 +11,20 @@ import { obtenerItemCarrito } from '../../API/UserAPI';
     
 function LayoutCarritoCompra(){
 
-    function elimianarItem(event){
-        console.log(event.target.id)
-        
-        
-    }
+ 
 
     const [products, setProducts] = useState([]);
     const [productsItems, setProductsItems] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [reload, setreload] = useState(true);
     const llamadoInicial = useRef(false);
+
+
 
 useEffect(() => {
 if (llamadoInicial.current === false) {
     llamadoInicial.current = true;
-    const fetchProducts = async () => {
+    async function fetchProducts ()  {
     try {
       setLoading(true);
       // Usamos fetchAllProducts para obtener todos los productos
@@ -87,7 +86,7 @@ async function obtenerProductos(id) {
             <div className='contenedorItemCarrito'>
                <table>
                 <thead>
-                    <tr onClick={elimianarItem}>
+                    <tr>
                         <th>Producto</th>
                         <th>Descripción</th>
                         <th>Precio</th>
@@ -107,8 +106,8 @@ async function obtenerProductos(id) {
                     stock= {product.stock}
                     descuento= {product.descuento}
                     cantidadSelect= {products[index].cantSelect}
-                    eliminarItem= {elimianarItem}
-                    nameItem = {product._id}
+                    nameItem = {products[index]._id}
+                    productoCar = {product._id}
                     />
                     ))}
       {Loading(loading)}

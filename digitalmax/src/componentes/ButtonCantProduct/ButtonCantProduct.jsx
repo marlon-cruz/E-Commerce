@@ -1,14 +1,28 @@
 
 import './ButtonCantProduct.css'
 import { useState } from 'react';
+import { modCantCarrito } from '../../API/UserAPI';
 
 function ButtonDetallesProduct(prop){
     const [countProduct, setCountProduct] = useState(prop.CantInicial == "" || prop.CantInicial == undefined ? 1 : prop.CantInicial );
    
-    function conteo (signo){
+   async function conteo (signo){
+        let user = localStorage.getItem('user')
+
         if(signo === "+"){
             if(countProduct < prop.stock){
             setCountProduct(countProduct + 1)
+            try {
+            let cantidadactual = countProduct + 1 
+            let dataProductActual = {
+                idProducto: prop.productoCar,
+                cantSelect:cantidadactual
+            }
+            const respuestaActualizacion = await modCantCarrito(user,prop.idProducto,dataProductActual)
+            } catch (error) {
+                console.error(error)
+            }
+            
             
             }
         }else{
@@ -16,7 +30,18 @@ function ButtonDetallesProduct(prop){
                 return
             }
             setCountProduct(countProduct - 1)
+            try {
+              let cantidadactual = countProduct - 1 
+            let dataProductActual = {
+                idProducto: prop.productoCar,
+                cantSelect:cantidadactual
+            }
+            const respuestaActualizacion = await modCantCarrito(user,prop.idProducto,dataProductActual)
+            } catch (error) {
+                console.error(error)                
+            }
         }
+       
 
         if(prop.Event != null){
                 prop.Event(countProduct,signo)

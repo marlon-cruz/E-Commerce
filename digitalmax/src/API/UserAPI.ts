@@ -51,3 +51,22 @@ export const agregarItemCarrito = async (idUser: string, dataProduct:dataCarrito
 export function obtenerItemCarrito(iduser:string){
     return `${API}/user/${iduser}/carrito`
 }
+
+interface dataActualizarCant{
+    idProducto: string,
+    cantSelect:number
+}
+export const modCantCarrito = async (idUser:string, idItem:string,dataCarrito:dataActualizarCant)=> {
+   fetch(`${API}/user/${idUser}/carrito/${idItem}`, {
+    method: "PUT",
+    body: JSON.stringify(dataCarrito),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+}
+
+export const eliminarItemCarritoUser = async (idUser:string, idItem:string)=> {
+    fetch(`${API}/user/${idUser}/carrito/${idItem}`, {
+        method: 'DELETE'
+})}

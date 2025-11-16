@@ -6,9 +6,11 @@ import ButtonCantProduct from '../../componentes/ButtonCantProduct/ButtonCantPro
 import { useState } from 'react';
 
 import { calcularPrecioDescuento } from '../ProductoDetallado/ProductoDetallado';
+
+import { eliminarItemCarritoUser } from '../../API/UserAPI';
 function CarritoItem(
     {
-        title,descripcion,precio,stock,descuento,cantidadSelect,eliminarItem,nameItem
+        title,descripcion,precio,stock,descuento,cantidadSelect,nameItem,productoCar
     }
 ){
     let precioDescuento = calcularPrecioDescuento(parseFloat(precio), parseFloat(descuento))
@@ -24,14 +26,25 @@ function CarritoItem(
        }
 
     }
+async   function eliminarItemCarrito(){
+    try {
+        let user = localStorage.getItem("user")
+        const respuestaActualizacion = await eliminarItemCarritoUser(user,nameItem)
+        alert("Eliminado")
+    } catch (error) {
+        console.error(error)
+    }
+    location.reload();
+}
+
     return(
         <tr key={nameItem}>
             <td>{title}</td>
             <td>{descripcion}</td>
             <td><span>${parseFloat(precioDescuento).toFixed(2)}</span><p>${parseFloat(precio).toFixed(2)}</p></td>
-            <td className='cellBtn'><ButtonCantProduct CantInicial = {cantidadSelect}  Event = {seteoTotal} carritoBtnCant= {"CarritoCantbtn"} stock = {parseInt(stock)}/></td>
+            <td className='cellBtn'><ButtonCantProduct productoCar = {productoCar} idProducto = {nameItem} CantInicial = {cantidadSelect}  Event = {seteoTotal} carritoBtnCant= {"CarritoCantbtn"} stock = {parseInt(stock)}/></td>
             <td>${parseFloat(total)}</td>
-            <td className='cellBtn'><ButtonActionProduc nameItem = {nameItem} status = {"CarritoCompraBTN"} text = {"Eliminar"} Click={eliminarItem}/></td>
+            <td className='cellBtn'><ButtonActionProduc   nameItem = {nameItem} status = {"CarritoCompraBTN"} text = {"Eliminar"} Click={eliminarItemCarrito}/></td>
         </tr>
     );
 }
