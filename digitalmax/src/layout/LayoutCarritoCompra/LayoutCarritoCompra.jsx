@@ -1,17 +1,93 @@
 import '../LayoutCarritoCompra/LayoutCarritoCompra.css'
 
 import CarritoItem from '../../componentes/CarritoItem/CarritoItem';
+import { useState, useEffect,useRef } from 'react';
+import { obtenerProducto } from '../../API/ProductosAPI';
+import { obtenerItemCarrito } from '../../API/UserAPI';
+
+
+
+
+    
 function LayoutCarritoCompra(){
-    function elimianarItem(){
-        alert("Eliminar Item")
+
+    function elimianarItem(event){
+        console.log(event.target.id)
+        
+        
     }
+
+    const [products, setProducts] = useState([]);
+    const [productsItems, setProductsItems] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const llamadoInicial = useRef(false);
+
+useEffect(() => {
+if (llamadoInicial.current === false) {
+    llamadoInicial.current = true;
+    const fetchProducts = async () => {
+    try {
+      setLoading(true);
+      // Usamos fetchAllProducts para obtener todos los productos
+      const user = localStorage.getItem('user')
+      const llamado = obtenerItemCarrito(user)
+      fetch(llamado)
+      .then(response => response.json())
+      .then(data => {
+        setProducts(data[0].carrito);
+        let dataUsoid = data[0].carrito
+        dataUsoid.map((product) => (
+          obtenerProductos(product.idProducto)  
+        ))
+
+      })
+      .catch(error => {
+        console.error("Error al obtener datos:", error);
+      });
+      
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  fetchProducts();
+}
+}, [] ) ;
+
+async function obtenerProductos(id) {
+    let respuesta = await  obtenerProducto(id)
+    respuesta = new Array(respuesta) 
+
+    setProductsItems(data => {
+        return [...data, ...respuesta]
+    })
+    
+
+    
+}
+  const Loading = (loading) =>{
+      if (loading === true){
+        return <tr>
+            <td>cargando...</td>
+            <td>Cargando...</td>
+            <td>Cargando...</td>
+            <td>Cargando...</td>
+            <td>Cargando...</td>
+            <td>Cargando...</td>
+        </tr>   
+    }
+  }
+
+    
+
     return(
         <div className='layoutCarritoCompra'>
             <h2>MI CARRETILLA</h2>
             <div className='contenedorItemCarrito'>
                <table>
                 <thead>
-                    <tr>
+                    <tr onClick={elimianarItem}>
                         <th>Producto</th>
                         <th>Descripción</th>
                         <th>Precio</th>
@@ -21,12 +97,21 @@ function LayoutCarritoCompra(){
                     </tr>
                 </thead>
                 <tbody className='bodyTableCarrito'>
-                    <CarritoItem title={"Mouse"} descripcion={"una descripcion"} precio = {"3.5"} stock={"10"} descuento = {"10"} cantidadSelect={3} eliminarItem={elimianarItem}/>
-                    <CarritoItem title={"Mouse"} descripcion={"una descripcion"} precio = {"3.5"} stock={"10"} descuento = {"10"} cantidadSelect={3} eliminarItem={elimianarItem}/>
-                    <CarritoItem title={"Mouse"} descripcion={"una descripcion"} precio = {"3.5"} stock={"10"} descuento = {"10"} cantidadSelect={3} eliminarItem={elimianarItem}/>
-                    <CarritoItem title={"Mouse"} descripcion={"una descripcion"} precio = {"3.5"} stock={"10"} descuento = {"10"} cantidadSelect={3} eliminarItem={elimianarItem}/>
-                    <CarritoItem title={"Mouse"} descripcion={"una descripcion"} precio = {"3.5"} stock={"10"} descuento = {"10"} cantidadSelect={3} eliminarItem={elimianarItem}/>
-                 
+                   
+                   {productsItems.map((product, index) => (
+                    <CarritoItem 
+                   
+                    title = {product.nombre}
+                    descripcion= {product.descripcion}
+                    precio= {product.precio}
+                    stock= {product.stock}
+                    descuento= {product.descuento}
+                    cantidadSelect= {products[index].cantSelect}
+                    eliminarItem= {elimianarItem}
+                    nameItem = {product._id}
+                    />
+                    ))}
+      {Loading(loading)}
                 </tbody>
                </table>
             </div>

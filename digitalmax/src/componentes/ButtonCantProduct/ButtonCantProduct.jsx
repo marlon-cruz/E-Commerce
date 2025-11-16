@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 function ButtonDetallesProduct(prop){
     const [countProduct, setCountProduct] = useState(prop.CantInicial == "" || prop.CantInicial == undefined ? 1 : prop.CantInicial );
-    console.log(prop.CantInicial)
+   
     function conteo (signo){
         if(signo === "+"){
             if(countProduct < prop.stock){

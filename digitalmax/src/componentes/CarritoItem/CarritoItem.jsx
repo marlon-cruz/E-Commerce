@@ -8,12 +8,13 @@ import { useState } from 'react';
 import { calcularPrecioDescuento } from '../ProductoDetallado/ProductoDetallado';
 function CarritoItem(
     {
-        title,descripcion,precio,stock,descuento,cantidadSelect,eliminarItem
+        title,descripcion,precio,stock,descuento,cantidadSelect,eliminarItem,nameItem
     }
 ){
     let precioDescuento = calcularPrecioDescuento(parseFloat(precio), parseFloat(descuento))
-    console.log(precioDescuento)
-    const [total, setTotal] = useState(precioDescuento * parseFloat(cantidadSelect))
+
+    let inicioTotal = precioDescuento * parseInt(cantidadSelect)  
+    const [total, setTotal] = useState(inicioTotal)
     
     const seteoTotal = (cantProduct, signo) =>{
        if(signo == "+"){
@@ -21,17 +22,16 @@ function CarritoItem(
        }else{
         setTotal(precioDescuento * (cantProduct -1))
        }
-            
-        
+
     }
     return(
-        <tr>
+        <tr key={nameItem}>
             <td>{title}</td>
             <td>{descripcion}</td>
             <td><span>${parseFloat(precioDescuento).toFixed(2)}</span><p>${parseFloat(precio).toFixed(2)}</p></td>
             <td className='cellBtn'><ButtonCantProduct CantInicial = {cantidadSelect}  Event = {seteoTotal} carritoBtnCant= {"CarritoCantbtn"} stock = {parseInt(stock)}/></td>
-            <td>${total.toFixed(2)}</td>
-            <td className='cellBtn'><ButtonActionProduc status = {"CarritoCompraBTN"} text = {"Eliminar"} Click={eliminarItem}/></td>
+            <td>${parseFloat(total)}</td>
+            <td className='cellBtn'><ButtonActionProduc nameItem = {nameItem} status = {"CarritoCompraBTN"} text = {"Eliminar"} Click={eliminarItem}/></td>
         </tr>
     );
 }

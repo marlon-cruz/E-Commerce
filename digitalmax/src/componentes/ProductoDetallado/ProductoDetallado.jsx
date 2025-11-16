@@ -58,7 +58,7 @@ const cambioStadozoom  = () =>{
                     </div>
                 </main>
                 <main className='calificacionPrecio'>
-                    <PreciosComprar precioDescuento={calcularPrecioDescuento(props.precio, props.descuento)} precio={props.precio} descuento={props.descuento} stock={props.stock} />
+                    <PreciosComprar producID = {props.productID} precioDescuento={calcularPrecioDescuento(props.precio, props.descuento)} precio={props.precio} descuento={props.descuento} stock={props.stock} />
                 </main>
             </section>
             {/*  */}

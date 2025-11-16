@@ -2,6 +2,7 @@ import {IsString, IsOptional,IsNotEmpty, IsNumber } from 'Class-validator'
 import { Type } from 'class-transformer';
 import { ValidateNested } from 'class-validator';
 
+
 export class CreateCarrito{
         @IsString()
         @IsNotEmpty()
