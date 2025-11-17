@@ -40,10 +40,11 @@ function ProductoDescripcion(prop) {
     }
     }
 
+
     return (
 
         <div className='productDesContent'>
-            <StardCalificacion tamaño={20} />
+            <StardCalificacion tamaño={20} count = {prop.StardCalificacion} />
             <h2>
                 $ {prop.precioDescuento}
             </h2>
