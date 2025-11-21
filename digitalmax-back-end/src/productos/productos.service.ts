@@ -46,6 +46,7 @@ export class ProductosService {
                   resena:{
                       userReseña: reseña.userReseña,
                       userNameReseña: reseña.userNameReseña,
+                      titulo:reseña.titulo,
                       descripcion: reseña.descripcion,
                       valoracion: reseña.valoracion
                   }

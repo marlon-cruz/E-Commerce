@@ -38,6 +38,7 @@ function LoginLayout(){
             if(data.contraseña == dataLogin.contraseña){
                 alert("BIENVENIDO A DIGITALMAX")
                 localStorage.setItem('user',data._id)
+                localStorage.setItem('username',data.nombre)
                 if (data.status != "inactive"){
                   navigateReguistre(userStats)
                 }else{

@@ -15,6 +15,10 @@ export class resena extends Document{
             @Prop({
             required:true, trim:true
             })
+            titulo: string;
+            @Prop({
+            required:true, trim:true
+            })
             descripcion: string;
             @Prop({
             required:true, trim:true

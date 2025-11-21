@@ -64,7 +64,7 @@ useEffect(() => {
       <h2 className='subtituloProductos'>Productos</h2>
       <div className="contentProduct">
       {products.map((product) => (
-      <CardProduct key={product._id || product.id} click={ () => handleProducto(product._id || product.id)} src = {product.imagenUrl} description = {product.nombre} precio = {product.precio} />
+      <CardProduct  key={product._id || product.id} click={ () => handleProducto(product._id || product.id)} src = {product.imagenUrl} description = {product.nombre} precio = {product.precio} />
       ))}
       {Loading(loading)}
       </div>

@@ -11,6 +11,9 @@ export class CreateReseña{
         userNameReseña: string;
         @IsString()
         @IsNotEmpty()
+        titulo: string;
+        @IsString()
+        @IsNotEmpty()
         descripcion: string;
         @IsNotEmpty()
         @IsNumber()            

@@ -4,6 +4,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .botonEdit>img{
     max-width: 40%;
